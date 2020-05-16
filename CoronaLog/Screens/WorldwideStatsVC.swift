@@ -76,7 +76,7 @@ extension WorldwideStatsVC { //UI Functions
         
         NSLayoutConstraint.activate([
 
-            todayLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            todayLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             todayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             todayLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             todayLabel.heightAnchor.constraint(equalToConstant: 30),
