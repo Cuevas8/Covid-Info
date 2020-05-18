@@ -15,5 +15,16 @@ enum SFSymbols {
 }
 
 enum apiKeys {
-    static let worldwideKey = "2521683939mshda892d1dedbfd27p109420jsnf2cfd6065012"
+    static let rapidAPIKey = "2521683939mshda892d1dedbfd27p109420jsnf2cfd6065012"
 }
+
+func returnFormattedNumber(numberToConvert: Int) -> String{
+    let formatter = NumberFormatter()
+    formatter.locale = NSLocale.current // this ensures the right separator behavior
+    formatter.numberStyle = NumberFormatter.Style.decimal
+    formatter.usesGroupingSeparator = true
+    
+    return formatter.string(from: NSNumber(value: numberToConvert)) ?? "---"
+}
+
+

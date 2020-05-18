@@ -15,6 +15,4 @@ struct WorldwideDataModel {
     let critical: Int
     let newDeaths: Int
     let totalDeaths: Int
-    
-    
 }

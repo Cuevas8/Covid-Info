@@ -11,7 +11,7 @@ import UIKit
 class CLItemInfoView: UIView {
     
     let titleLabel = CLLabel(textAlignment: .center, fontSize: 15)
-    let countLabel = CLLabel(textAlignment: .center, fontSize: 20)
+    let countLabel = CLLabel(textAlignment: .center, fontSize: 18)
     
     
     override init(frame: CGRect) {

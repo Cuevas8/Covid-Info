@@ -15,7 +15,7 @@ class NetworkManager {
         
         let headers = [
             "x-rapidapi-host": "covid-193.p.rapidapi.com",
-            "x-rapidapi-key": apiKeys.worldwideKey
+            "x-rapidapi-key": apiKeys.rapidAPIKey
         ]
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://covid-193.p.rapidapi.com/history?day=\(dateString)&country=all")! as URL,
@@ -27,8 +27,8 @@ class NetworkManager {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { [weak self] (data, response, error) -> Void in
             
-            
             guard let self = self else { return }
+            
             if let _ = error {
                 completion(.failure(.unableToComplete))
                 return
@@ -42,7 +42,7 @@ class NetworkManager {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 
-                guard let worldwideData = self.createWorldwideDataFromJSON(json: json) else {
+                guard let worldwideData = self.parseWorldwideDataFromJSON(json: json) else {
                     completion(.failure(.invalidResponse))
                     return
                 }
@@ -51,18 +51,58 @@ class NetworkManager {
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }
-            
-   
         })
         dataTask.resume()
     }
-
+    
+    func getCasesByCountryData(completion: @escaping (Result<[CasesByCountryDataModel], CLErrors>) -> Void) {
+        let headers = [
+            "x-rapidapi-host": "covid-193.p.rapidapi.com",
+            "x-rapidapi-key": apiKeys.rapidAPIKey
+        ]
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://covid-193.p.rapidapi.com/statistics")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { [weak self] (data, response, error) -> Void in
+            guard let self = self else { return }
+            
+            if let _ = error {
+                completion(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                
+                guard let casesByCountryData = self.parseCasesByCountryDataFromJSON(json: json) else {
+                    completion(.failure(.invalidResponse))
+                    return
+                }
+                
+                completion(.success(casesByCountryData))
+                
+            } catch {
+                print("JSON error: \(error.localizedDescription)")
+            }
+        })
+        dataTask.resume()
+    }
 }
 
 extension NetworkManager { //Handle Data cleaning
     
-    func createWorldwideDataFromJSON(json: Any) -> WorldwideDataModel? {
-
+    func parseWorldwideDataFromJSON(json: Any) -> WorldwideDataModel? {
+        
         guard let entireJSON = json as? [String: Any] else{
             return nil
         }
@@ -88,10 +128,35 @@ extension NetworkManager { //Handle Data cleaning
         let endIndex = newDeathsString.endIndex
         
         guard let newDeathsInt = Int(newDeathsString[startIndex..<endIndex]) else { return nil}
-        print(newDeathsInt)
         
         let worldWideDataModel = WorldwideDataModel(totalCases: totalCases, active: activeCases, recovered: recovered, critical: criticalCases, newDeaths: newDeathsInt, totalDeaths: totalDeaths)
-
+        
         return worldWideDataModel
     }
+    
+    func parseCasesByCountryDataFromJSON(json: Any) -> [CasesByCountryDataModel]? {
+        
+        guard let entireJSON = json as? [String: Any] else{
+            return nil
+        }
+        guard let response = entireJSON["response"] as? [[String: Any]] else {
+            return nil
+        }
+        
+        var casesByCountryArray = [CasesByCountryDataModel]()
+        
+        for value in response {
+            guard let countryName = value["country"] as? String else { return nil }
+            guard let cases = value["cases"] as? [String: Any] else { return nil }
+            guard let casesForCountry = cases["total"] as? Int else { return nil }
+            let countryData = CasesByCountryDataModel(countryName: countryName, casesForCountry: casesForCountry)
+            casesByCountryArray.append(countryData)
+            
+        }
+        return casesByCountryArray.sorted(by: {$0.casesForCountry > $1.casesForCountry})
+    }
+    
+    
+    
+    
 }
