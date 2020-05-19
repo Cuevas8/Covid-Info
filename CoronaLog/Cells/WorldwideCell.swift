@@ -40,7 +40,6 @@ class WorldwideCell: UITableViewCell {
             countryLabel.widthAnchor.constraint(equalToConstant: 100),
             
             totalCasesLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-           // totalCasesLabel.leadingAnchor.constraint(equalTo: self.countryLabel.trailingAnchor, constant: 24),
             totalCasesLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             totalCasesLabel.heightAnchor.constraint(equalToConstant: 30)
         ])

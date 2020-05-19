@@ -9,7 +9,6 @@
 import UIKit
 
 enum SFSymbols {
-    
     static let globe = UIImage(systemName: "globe")
     static let search = UIImage(systemName: "magnifyingglass")
 }

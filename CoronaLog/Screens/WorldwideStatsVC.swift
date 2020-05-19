@@ -18,7 +18,6 @@ class WorldwideStatsVC: UIViewController {
     var itemCardYesterday = CLCardInfoVC()
     var casesByCountry: [CasesByCountryDataModel] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("test")
@@ -27,7 +26,6 @@ class WorldwideStatsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-                print("test")
         loadTableViewWithData()
         loadWorldwideDataToday()
         loadWorldwideDataYesterday()

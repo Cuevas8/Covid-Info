@@ -103,26 +103,20 @@ extension NetworkManager { //Handle Data cleaning
     
     func parseWorldwideDataFromJSON(json: Any) -> WorldwideDataModel? {
         
-        guard let entireJSON = json as? [String: Any] else{
-            return nil
-        }
-        guard let response = entireJSON["response"] as? [[String: Any]] else {
-            return nil
-        }
-        guard let cases = response[0]["cases"] as? [String: Any] else {
-            return nil
-        }
+        guard let entireJSON = json as? [String: Any] else{ return nil }
+        
+        guard let response = entireJSON["response"] as? [[String: Any]] else { return nil }
+        
+        guard let cases = response[0]["cases"] as? [String: Any] else { return nil }
+        
         guard let totalCases = cases["total"] as? Int, let recovered = cases["recovered"] as? Int,
             let activeCases = cases["active"] as? Int, let criticalCases = cases["critical"] as? Int else {
                 return nil
         }
         
-        guard let deaths = response[0]["deaths"] as? [String: Any] else {
-            return nil
-        }
-        guard let newDeathsString = deaths["new"] as? String, let totalDeaths = deaths["total"] as? Int else {
-            return nil
-        }
+        guard let deaths = response[0]["deaths"] as? [String: Any] else { return nil }
+        
+        guard let newDeathsString = deaths["new"] as? String, let totalDeaths = deaths["total"] as? Int else { return nil }
         
         let startIndex =  newDeathsString.index(newDeathsString.startIndex, offsetBy: 1)
         let endIndex = newDeathsString.endIndex
@@ -136,12 +130,8 @@ extension NetworkManager { //Handle Data cleaning
     
     func parseCasesByCountryDataFromJSON(json: Any) -> [CasesByCountryDataModel]? {
         
-        guard let entireJSON = json as? [String: Any] else{
-            return nil
-        }
-        guard let response = entireJSON["response"] as? [[String: Any]] else {
-            return nil
-        }
+        guard let entireJSON = json as? [String: Any] else{ return nil }
+        guard let response = entireJSON["response"] as? [[String: Any]] else { return nil }
         
         var casesByCountryArray = [CasesByCountryDataModel]()
         
@@ -155,8 +145,4 @@ extension NetworkManager { //Handle Data cleaning
         }
         return casesByCountryArray.sorted(by: {$0.casesForCountry > $1.casesForCountry})
     }
-    
-    
-    
-    
 }

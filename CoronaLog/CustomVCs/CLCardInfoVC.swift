@@ -31,7 +31,6 @@ class CLCardInfoVC: UIViewController {
         super.viewDidLoad()
         configureBackgroundView()
         layoutUI()
-       // configureItems()
         configureStackViews()
     }
     
@@ -57,8 +56,6 @@ class CLCardInfoVC: UIViewController {
         stackView2.addArrangedSubview(itemInfoViewFive)
         stackView2.addArrangedSubview(itemInfoViewSix)
     }
-    
-    @objc func actionButtonTapped() {}
     
     private func layoutUI() {
         view.addSubview(stackView)

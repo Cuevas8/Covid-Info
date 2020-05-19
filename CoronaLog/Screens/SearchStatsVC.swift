@@ -30,12 +30,10 @@ class SearchStatsVC: UIViewController  {
             self.present(alert, animated: true)
             return
         }
-        
-        
+
         let countryStatsVC = CountryStatsVC()
         navigationController?.pushViewController(countryStatsVC, animated: true)
     }
-
     
     private func setupLayout() {
         
@@ -44,7 +42,6 @@ class SearchStatsVC: UIViewController  {
         
         view.addSubview(searchButton)
         searchButton.addTarget(self, action: #selector(pushCountryStatsVC), for: .touchUpInside)
-
         
         NSLayoutConstraint.activate([
             searchTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
@@ -70,5 +67,4 @@ extension SearchStatsVC: UITextFieldDelegate {
         print("Did tap return")
         return true
     }
-    
 }

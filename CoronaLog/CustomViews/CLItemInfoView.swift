@@ -50,5 +50,4 @@ class CLItemInfoView: UIView {
         titleLabel.text = title
         countLabel.text = count
     }
-    
 }

@@ -39,5 +39,4 @@ class CLLoadingVC: UIViewController {
             self.containerView = nil
         }
     }
-
 }
