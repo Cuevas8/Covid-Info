@@ -16,6 +16,7 @@ class WorldwideCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         configure()
     }
     
@@ -31,6 +32,7 @@ class WorldwideCell: UITableViewCell {
     private func configure() {
         addSubview(countryLabel)
         addSubview(totalCasesLabel)
+        
         
         
         NSLayoutConstraint.activate([

@@ -6,6 +6,8 @@
 //  Copyright © 2020 bryanCuevas. All rights reserved.
 //
 
+//Icons made by https://www.flaticon.com/authors/smashicons
+
 import UIKit
 
 enum SFSymbols {

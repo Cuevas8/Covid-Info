@@ -120,6 +120,7 @@ extension WorldwideStatsVC { //UI Functions
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WorldwideCell.self, forCellReuseIdentifier: WorldwideCell.reuseID)
+        
     }
     
     private func setupLayout() {
