@@ -1,10 +1,8 @@
 # Covid-Log
 
-# Language
-Swift
+The purpose of this project is to create a simple overview to analyze the Corona Virus epidemic. 
 
-# Purpose
-The purpose of this project is to create a simple overview in order to analyze the Corona Virus. 
+img src="images/IMG_2C5010694BFC-1_iphonexspacegrey_portrait.png" width="2000" height="2000">
 
 
 
