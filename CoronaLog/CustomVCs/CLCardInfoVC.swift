@@ -74,15 +74,4 @@ class CLCardInfoVC: UIViewController {
             stackView2.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
-    
-//    private func configureItems() {
-//        itemInfoViewOne.setup(title: "Total:", count: "1,000,234")
-//        itemInfoViewTwo.setup(title: "Active:", count: "80,234")
-//        itemInfoViewThree.setup(title: "Recovered:", count: "80,234")
-//
-//        itemInfoViewFour.setup(title: "Critical:", count: "5,234")
-//        itemInfoViewFive.setup(title: "New Deaths", count: "8,234")
-//        itemInfoViewSix.setup(title: "Deaths:", count: "834")
-//    }
-
 }

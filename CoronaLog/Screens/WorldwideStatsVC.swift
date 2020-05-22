@@ -9,6 +9,7 @@
 import UIKit
 
 class WorldwideStatsVC: UIViewController {
+    
     let todayLabel = CLLabel(textAlignment: .left, fontSize: 20)
     let yesterdayLabel = CLLabel(textAlignment: .left, fontSize: 20)
     let itemViewOne = UIView()
