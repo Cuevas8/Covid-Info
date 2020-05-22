@@ -12,7 +12,7 @@ class WorldwideCell: UITableViewCell {
     
     static let reuseID  = "worldWideCell"
     let countryLabel = CLLabel(textAlignment: .center, fontSize: 20)
-    let totalCasesLabel   = CLLabel(textAlignment: .center, fontSize: 20)
+    let totalCasesLabel = CLLabel(textAlignment: .center, fontSize: 20)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,8 +33,6 @@ class WorldwideCell: UITableViewCell {
         addSubview(countryLabel)
         addSubview(totalCasesLabel)
         
-        
-        
         NSLayoutConstraint.activate([
             countryLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             countryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
@@ -46,5 +44,4 @@ class WorldwideCell: UITableViewCell {
             totalCasesLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
-    
 }

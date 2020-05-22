@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938A04D02478590600811A9B /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938A04CF2478590600811A9B /* InfoCell.swift */; };
+		938A04D224785E3E00811A9B /* InfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938A04D124785E3E00811A9B /* InfoCellModel.swift */; };
 		938FD831246DEDB100C233F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FD830246DEDB100C233F5 /* Constants.swift */; };
 		938FD833246DF10300C233F5 /* CLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FD832246DF10300C233F5 /* CLButton.swift */; };
 		938FD835246DF59800C233F5 /* CLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FD834246DF59800C233F5 /* CLTextField.swift */; };
@@ -21,6 +23,7 @@
 		938FD852246F610000C233F5 /* CLErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FD851246F610000C233F5 /* CLErrors.swift */; };
 		938FD855246FC50D00C233F5 /* WorldwideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FD854246FC50D00C233F5 /* WorldwideCell.swift */; };
 		93A2363424720BA200D18C2E /* CasesByCountryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2363324720BA200D18C2E /* CasesByCountryDataModel.swift */; };
+		93F0DC4A24749B1F00F443BD /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0DC4924749B1F00F443BD /* InformationVC.swift */; };
 		93FE27AA246DE0B700B66FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE27A9246DE0B700B66FB9 /* AppDelegate.swift */; };
 		93FE27AC246DE0B700B66FB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE27AB246DE0B700B66FB9 /* SceneDelegate.swift */; };
 		93FE27B3246DE0B900B66FB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FE27B2246DE0B900B66FB9 /* Assets.xcassets */; };
@@ -49,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		938A04CF2478590600811A9B /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		938A04D124785E3E00811A9B /* InfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellModel.swift; sourceTree = "<group>"; };
 		938FD830246DEDB100C233F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		938FD832246DF10300C233F5 /* CLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLButton.swift; sourceTree = "<group>"; };
 		938FD834246DF59800C233F5 /* CLTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTextField.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		938FD851246F610000C233F5 /* CLErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLErrors.swift; sourceTree = "<group>"; };
 		938FD854246FC50D00C233F5 /* WorldwideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldwideCell.swift; sourceTree = "<group>"; };
 		93A2363324720BA200D18C2E /* CasesByCountryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesByCountryDataModel.swift; sourceTree = "<group>"; };
+		93F0DC4924749B1F00F443BD /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		93FE27A6246DE0B700B66FB9 /* CoronaLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FE27A9246DE0B700B66FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93FE27AB246DE0B700B66FB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				938FD836246E3FE200C233F5 /* CountryStatsVC.swift */,
 				93FE27DB246DE4F500B66FB9 /* WorldwideStatsVC.swift */,
 				93FE27D9246DE3F500B66FB9 /* SearchStatsVC.swift */,
+				93F0DC4924749B1F00F443BD /* InformationVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 			children = (
 				938FD849246F41D500C233F5 /* WorldwideDataModel.swift */,
 				93A2363324720BA200D18C2E /* CasesByCountryDataModel.swift */,
+				938A04D124785E3E00811A9B /* InfoCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				938FD854246FC50D00C233F5 /* WorldwideCell.swift */,
+				938A04CF2478590600811A9B /* InfoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -410,8 +419,11 @@
 				938FD831246DEDB100C233F5 /* Constants.swift in Sources */,
 				93FE27DA246DE3F500B66FB9 /* SearchStatsVC.swift in Sources */,
 				93A2363424720BA200D18C2E /* CasesByCountryDataModel.swift in Sources */,
+				938A04D224785E3E00811A9B /* InfoCellModel.swift in Sources */,
+				93F0DC4A24749B1F00F443BD /* InformationVC.swift in Sources */,
 				938FD846246E4F5900C233F5 /* CLLabel.swift in Sources */,
 				938FD852246F610000C233F5 /* CLErrors.swift in Sources */,
+				938A04D02478590600811A9B /* InfoCell.swift in Sources */,
 				938FD840246E4CA000C233F5 /* CLCardInfoVC.swift in Sources */,
 				938FD837246E3FE200C233F5 /* CountryStatsVC.swift in Sources */,
 				938FD843246E4D1E00C233F5 /* CLItemInfoView.swift in Sources */,

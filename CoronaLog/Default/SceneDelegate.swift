@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createSearchNavController() -> UINavigationController {
         let searchVC = SearchStatsVC()
         searchVC.title = "Search"
-        searchVC.tabBarItem = UITabBarItem(title: "Search", image: SFSymbols.search, tag: 1)
+        searchVC.tabBarItem = UITabBarItem(title: "Search", image: SFSymbols.search, tag: 0)
         
         return UINavigationController(rootViewController: searchVC)
     }
@@ -37,10 +37,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UINavigationController(rootViewController: worldWideStatsVC)
     }
     
+    func createInfoVCNavController() -> UINavigationController {
+        let infoVC = InformationVC()
+        infoVC.title = "Covid-19 Info"
+        infoVC.tabBarItem = UITabBarItem(title: "Info", image: SFSymbols.info, tag: 2)
+        
+        return UINavigationController(rootViewController: infoVC)
+    }
+    
     func createTabBarController() -> UITabBarController {
         let tabBar = UITabBarController()
         
-        tabBar.viewControllers = [createWorldWideStatsNavController(), createSearchNavController()]
+        tabBar.viewControllers = [createWorldWideStatsNavController(), createInfoVCNavController()]
         UITabBar.appearance().tintColor = .systemTeal
         return tabBar
     }

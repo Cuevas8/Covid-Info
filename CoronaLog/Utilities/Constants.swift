@@ -13,6 +13,7 @@ import UIKit
 enum SFSymbols {
     static let globe = UIImage(systemName: "globe")
     static let search = UIImage(systemName: "magnifyingglass")
+    static let info = UIImage(systemName: "info.circle")
 }
 
 enum apiKeys {
